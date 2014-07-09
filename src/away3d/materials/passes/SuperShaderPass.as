@@ -164,7 +164,7 @@ package away3d.materials.passes
 		override protected function updateLights():void
 		{
 			//			super.updateLights();
-			if (_lightPicker && !_ignoreLights) {
+			if (_lightPicker && _lightPicker.enabled && !_ignoreLights ) {
 				_numPointLights = _lightPicker.numPointLights;
 				_numDirectionalLights = _lightPicker.numDirectionalLights;
 				_numLightProbes = _lightPicker.numLightProbes;

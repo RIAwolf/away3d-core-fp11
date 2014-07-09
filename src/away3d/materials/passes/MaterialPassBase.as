@@ -535,7 +535,7 @@ package away3d.materials.passes
 		 */
 		protected function updateLights():void
 		{
-		
+
 		}
 
 		/**

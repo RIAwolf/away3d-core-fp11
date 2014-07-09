@@ -124,7 +124,7 @@ package away3d.materials.passes
 			var numPointLights:int = _numPointLights;
 			var numLightProbes:int = _numLightProbes;
 			
-			if (_lightPicker) {
+			if (_lightPicker && _lightPicker.enabled) {
 				_numDirectionalLights = calculateNumDirectionalLights(_lightPicker.numDirectionalLights);
 				_numPointLights = calculateNumPointLights(_lightPicker.numPointLights);
 				_numLightProbes = calculateNumProbes(_lightPicker.numLightProbes);

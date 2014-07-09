@@ -56,7 +56,7 @@ package away3d.materials.passes
 			var numPointLights:int;
 			var numDirectionalLights:int;
 			
-			if (_lightPicker) {
+			if (_lightPicker  && _lightPicker.enabled) {
 				numPointLights = _lightPicker.numCastingPointLights > 0? 1 : 0;
 				numDirectionalLights = _lightPicker.numCastingDirectionalLights > 0? 1 : 0;
 			} else {

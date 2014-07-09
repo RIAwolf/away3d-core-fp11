@@ -432,7 +432,7 @@ package away3d.materials
 		 */
 		arcane function renderPass(index:uint, renderable:IRenderable, stage3DProxy:Stage3DProxy, entityCollector:EntityCollector, viewProjection:Matrix3D):void
 		{
-			if (_lightPicker)
+			if (_lightPicker && _lightPicker.enabled)
 				_lightPicker.collectLights(renderable, entityCollector);
 			
 			var pass:MaterialPassBase = _passes[index];

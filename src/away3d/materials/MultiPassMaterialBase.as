@@ -731,7 +731,7 @@
 		 */
 		protected function get numLights():int
 		{
-			return _lightPicker? _lightPicker.numLightProbes + _lightPicker.numDirectionalLights + _lightPicker.numPointLights +
+			return _lightPicker && _lightPicker.enabled ? _lightPicker.numLightProbes + _lightPicker.numDirectionalLights + _lightPicker.numPointLights +
 				_lightPicker.numCastingDirectionalLights + _lightPicker.numCastingPointLights : 0;
 		}
 
@@ -740,7 +740,7 @@
 		 */
 		private function get numNonCasters():int
 		{
-			return _lightPicker? _lightPicker.numLightProbes + _lightPicker.numDirectionalLights + _lightPicker.numPointLights : 0;
+			return _lightPicker && _lightPicker.enabled? _lightPicker.numLightProbes + _lightPicker.numDirectionalLights + _lightPicker.numPointLights : 0;
 		}
 
 		/**

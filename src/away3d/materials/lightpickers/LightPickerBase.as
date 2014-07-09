@@ -5,8 +5,9 @@ package away3d.materials.lightpickers
 	import away3d.core.traverse.*;
 	import away3d.library.assets.*;
 	import away3d.lights.*;
-	
-	import flash.geom.*;
+
+    import flash.events.Event;
+    import flash.geom.*;
 	
 	use namespace arcane;
 
@@ -31,6 +32,7 @@ package away3d.materials.lightpickers
 		protected var _castingDirectionalLights:Vector.<DirectionalLight>;
 		protected var _lightProbes:Vector.<LightProbe>;
 		protected var _lightProbeWeights:Vector.<Number>;
+		protected var _enabled:Boolean=true;
 
 		/**
 		 * Creates a new LightPickerBase object.
@@ -193,6 +195,19 @@ package away3d.materials.lightpickers
 			for (i = 0; i < _numLightProbes; ++i)
 				_lightProbeWeights[i] *= total;
 		}
-	
-	}
+
+        /**
+         * Flag indicating whether to consider this light picker during pass
+         */
+        public function get enabled():Boolean {
+            return _enabled;
+        }
+
+        public function set enabled(value:Boolean):void {
+            if(_enabled!=value) {
+                _enabled = value;
+                dispatchEvent(new Event(Event.CHANGE));
+            }
+        }
+    }
 }
